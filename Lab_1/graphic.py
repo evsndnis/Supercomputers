@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import io
 import base64
 
-# Данные из таблицы пользователя
+# Данные из таблицы
 data = {
     'Threads': [1, 2, 4, 6, 8],
     'Static': [18.23, 8.62, 5.39, 6.45, 4.47],
@@ -37,11 +37,6 @@ plt.grid(True)
 plt.legend(title='Политика планирования')
 plt.tight_layout()
 
-# Чтобы сохранить или показать график, используйте plt.show() или plt.savefig()
-# Например, для сохранения: plt.savefig('execution_time.png')
-# Для отображения (если работаете в среде, поддерживающей вывод графиков): plt.show()
-
-
 # Построение графика "Ускорение vs. Количество потоков"
 plt.figure(figsize=(10, 6))
 for col in df_speedup.columns:
@@ -51,7 +46,6 @@ for col in df_speedup.columns:
 # Добавляем линию идеального ускорения
 plt.plot(df_speedup['Threads'], df_speedup['Threads'], linestyle='--', color='gray', label='Идеальное ускорение')
 
-
 plt.xlabel('Количество потоков')
 plt.ylabel('Ускорение')
 plt.title('Зависимость ускорения от количества потоков и политики планирования')
@@ -60,11 +54,4 @@ plt.grid(True)
 plt.legend(title='Политика планирования')
 plt.tight_layout()
 
-# Чтобы сохранить или показать график, используйте plt.show() или plt.savefig()
-# Например, для сохранения: plt.savefig('speedup.png')
 plt.show()
-
-# В данном случае, для вывода в интерфейс, используются специальные метки
-# Если вы запускаете код локально, закомментируйте эти строки и используйте plt.show() или plt.savefig()
-# print(f"@@BEGIN_GRAPH_@@{image_base64_1}@@END_GRAPH_@@") # Это было для внутреннего вывода
-# print(f"@@BEGIN_GRAPH_@@{image_base64_2}@@END_GRAPH_@@") # Это было для внутреннего вывода
