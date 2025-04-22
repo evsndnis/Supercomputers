@@ -98,10 +98,10 @@ vector<double> jacobi_method(const vector<vector<double>>& A,
 }
 
 void print_help() {
-    cout << "Use: ./slau_jacobi [size] [accuracy] [max_ietrs] [threads] [schedule] [chunk_size]\n";
+    cout << "Use: ./Jacobi_enhabced [size] [accuracy] [max_ietrs] [threads] [schedule] [chunk_size]\n";
     cout << "  schedule: static, dynamic, guided (as default: static)\n";
     cout << "  chunk_size: size of block for schedule (as default: 32)\n";
-    cout << "Example: ./slau_jacobi 1000 1e-6 1000 4 dynamic 16\n";
+    cout << "Example: ./Jacobi_enhanced 1000 1e-6 1000 4 dynamic 16\n";
 }
 
 int main(int argc, char* argv[]) {
